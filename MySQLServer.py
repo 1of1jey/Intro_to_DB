@@ -26,3 +26,14 @@ try:
     except Error as e:
     # Handle any MySQL connection or execution errors
     print(f"Error connecting to MySQL server: {e}")
+
+    finally:
+    # Ensure proper cleanup of resources
+    if cursor:
+        cursor.close()
+    if connection and connection.is_connected():
+        connection.close()
+
+
+if __name__ == "__main__":
+    create_database()
