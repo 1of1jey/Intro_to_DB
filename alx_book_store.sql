@@ -14,3 +14,7 @@ CREATE TABLE Customers (
     email VARCHAR(215) UNIQUE NOT NULL,
     address TEXT
 );
+
+CREATE TABLE Books (
+
+);
