@@ -33,9 +33,9 @@ CREATE TABLE Orders (
 
 CREATE TABLE Order_Details (
     order_detail_id INT PRIMARY KEY AUTO_INCREMENT,
-                               order_id INT NOT NULL,
-                               book_id INT NOT NULL,
-                               quantity DOUBLE NOT NULL,
-                               FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE ON UPDATE CASCADE,
-                               FOREIGN KEY (book_id) REFERENCES Books(book_id) ON DELETE RESTRICT ON UPDATE CASCADE
+    order_id INT NOT NULL,
+    book_id INT NOT NULL,
+    quantity DOUBLE NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES Books(book_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
