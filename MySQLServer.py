@@ -13,3 +13,11 @@ try:
         user='root',            # MySQL username
         password='password'     # MySQL password (change as needed)
     )
+
+    if connection.is_connected():
+        cursor = connection.cursor()
+
+        # Create database if it doesn't exist
+        cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
+
+        print("Database 'alx_book_store' created successfully!")
