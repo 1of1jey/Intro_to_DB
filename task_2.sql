@@ -21,3 +21,10 @@ CREATE TABLE IF NOT EXISTS customers (
     email VARCHAR(215) NOT NULL UNIQUE,
     address TEXT
     );
+
+CREATE TABLE IF NOT EXISTS orders (
+                                      order_id INT AUTO_INCREMENT PRIMARY KEY,
+                                      customer_id INT NOT NULL,
+                                      order_date DATE NOT NULL,
+                                      FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    );
