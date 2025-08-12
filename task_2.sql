@@ -28,3 +28,12 @@ CREATE TABLE IF NOT EXISTS orders (
     order_date DATE NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
     );
+
+CREATE TABLE IF NOT EXISTS order_details (
+                                             orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
+                                             order_id INT NOT NULL,
+                                             book_id INT NOT NULL,
+                                             quantity DOUBLE NOT NULL,
+                                             FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES books(book_id)
+    );
