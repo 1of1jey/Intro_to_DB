@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS orders (
     );
 
 CREATE TABLE IF NOT EXISTS order_details (
-                                             orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
-                                             order_id INT NOT NULL,
+    orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
                                              book_id INT NOT NULL,
                                              quantity DOUBLE NOT NULL,
                                              FOREIGN KEY (order_id) REFERENCES orders(order_id),
