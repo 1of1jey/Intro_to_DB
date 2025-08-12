@@ -13,3 +13,11 @@ CREATE TABLE IF NOT EXISTS books (
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES authors(author_id)
     );
+
+-- Create Customers table
+CREATE TABLE IF NOT EXISTS customers (
+                                         customer_id INT AUTO_INCREMENT PRIMARY KEY,
+                                         customer_name VARCHAR(215) NOT NULL,
+    email VARCHAR(215) NOT NULL UNIQUE,
+    address TEXT
+    );
